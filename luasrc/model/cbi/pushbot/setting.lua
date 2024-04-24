@@ -7,7 +7,7 @@ local sys = require "luci.sys"
 local ifaces = sys.net:devices()
 
 m=Map("pushbot",translate("PushBot"),
-translate("「全能推送」，英文名「PushBot」，是一款从服务器推送报警信息和日志到各平台的工具。<br>支持钉钉推送，企业微信推送，PushPlus推送。<br>本插件由tty228/luci-app-serverchan创建，然后七年修改为全能推送自用。<br /><br />如果你在使用中遇到问题，请到这里提交：")
+translate("「全能推送」，英文名「PushBot」，是一款从服务器推送报警信息和日志到各平台的工具。<br>支持钉钉推送，企业微信推送，PushPlus推送。<br>本插件由tty228/luci-app-serverchan创建，然后七年修改为全能推送自用。<br /><br>现在满哥自己维护了一个版本，支持自建token加密<br /><br />如果你在使用中遇到问题，请到这里提交：")
 .. [[<a href="https://github.com/zzsj0928/luci-app-pushbot" target="_blank">]]
 .. translate("github 项目地址")
 .. [[</a>]]
@@ -116,6 +116,11 @@ a:depends("jsonpath","/usr/bin/pushbot/api/gotify.json")
 a=s:taboption("basic", Value,"ntfy_srv",translate('NTFY Server'), translate("NTFY 自建服务器地址").."<br>默认为<a href='https://ntfy.sh/' target='_blank'>官方服务器</a><br>如https://your.domain:port<br>注意末尾不要带斜杠<br>具体自建服务器方式参见：<a href='https://ntfy.sh/' target='_blank'>点击这里</a><br>")
 a.rmempty = true
 a.default = "https://ntfy.sh"
+a:depends("jsonpath","/usr/bin/pushbot/api/ntfy.json")
+
+-- 添加token 输入
+a=s:taboption("basic", Value,"ntfy_token",translate('NTFY Token'), translate("NTFY Token").."<br>调用代码获取<a href='https://docs.ntfy.sh/' target='_blank'>点击这里</a>")
+a.rmempty = true
 a:depends("jsonpath","/usr/bin/pushbot/api/ntfy.json")
 
 a=s:taboption("basic", Value,"ntfy_topic",translate('NTFY Topic'), translate("NTFY 主题").."<br>调用代码获取<a href='https://docs.ntfy.sh/' target='_blank'>点击这里</a>")
