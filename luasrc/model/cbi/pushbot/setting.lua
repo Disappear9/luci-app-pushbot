@@ -118,7 +118,6 @@ a.rmempty = true
 a.default = "https://ntfy.sh"
 a:depends("jsonpath","/usr/bin/pushbot/api/ntfy.json")
 
--- 添加token 输入
 a=s:taboption("basic", Value,"ntfy_token",translate('NTFY Token'), translate("NTFY Token").."<br>调用代码获取<a href='https://docs.ntfy.sh/' target='_blank'>点击这里</a>")
 a.rmempty = true
 a:depends("jsonpath","/usr/bin/pushbot/api/ntfy.json")

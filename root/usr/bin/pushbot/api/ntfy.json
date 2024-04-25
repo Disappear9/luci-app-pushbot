@@ -1,6 +1,5 @@
 {
     "_api": "【ntfy】",
-
     "url": "${ntfy_srv}/",
     "data": "@${tempjsonpath}",
     "token" : "${ntfy_token}",
