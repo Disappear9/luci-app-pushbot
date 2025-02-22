@@ -4,7 +4,7 @@ PKG_NAME:=luci-app-pushbot
 PKG_VERSION:=3.61.4
 PKG_RELEASE:=1
 
-PKG_MAINTAINER:=tty228 <tty228@yeah.net>  zzsj0928 MasterOfStar
+PKG_MAINTAINER:=tty228 <tty228@yeah.net>  zzsj0928 MasterOfStar Disappear9
 
 LUCI_TITLE:=LuCI support for Pushbot
 LUCI_PKGARCH:=all
